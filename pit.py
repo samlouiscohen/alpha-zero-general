@@ -1,23 +1,31 @@
 import Arena
 from MCTS import MCTS
-from othello.OthelloGame import OthelloGame, display
-from othello.OthelloPlayers import *
-from othello.pytorch.NNet import NNetWrapper as NNet
+from tictactoe.TicTacToeGame import TicTacToeGame, display
+from tictactoe.TicTacToePlayers import *
+from tictactoe.keras.NNet import NNetWrapper as NNet
 
 import numpy as np
 from utils import *
+
+
+
+
+
+
+
+
 
 """
 use this script to play any two agents against each other, or play manually with
 any agent.
 """
 
-g = OthelloGame(6)
+g = TicTacToeGame()
 
 # all players
 rp = RandomPlayer(g).play
-gp = GreedyOthelloPlayer(g).play
-hp = HumanOthelloPlayer(g).play
+#gp = GreedyOthelloPlayer(g).play
+hp = HumanTicTacToePlayer(g).play
 
 # nnet players
 n1 = NNet(g)
